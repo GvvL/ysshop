@@ -14,6 +14,9 @@ function brand(state=[],action) {
             return state
     }
 }
+const banner=(state=[],action)=>{
+    return action.type==ActionType.BANNER_SET?action.data:state;
+}
 
 function msg(state='no msg',action){
     if(action.type==ActionType.CHANGE_MSG){
