@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import {width} from '../utils'
 import {Actions} from 'react-native-router-flux'
-import {SHOP_INDEX_URL} from '../config'
+import {YSHOST} from '../config'
 
 
 
@@ -16,12 +16,12 @@ export default class ShopCell extends Component{
     render(){
        return ( <TouchableOpacity style={styles.container} onPress={()=>{Actions.detail({rowData:this.props.rowData,title:this.props.rowData.title,backTitle:'首页'})}} activeOpacity={.7}>
                  <View >
-                    <Image source={{uri:'http://www.yshealthy.com'+this.props.rowData.biglogo}} style={styles.image} resizeMode='contain'></Image>
+                    <Image source={{uri:YSHOST+this.props.rowData.picture}} style={styles.image} resizeMode='contain'></Image>
                     <View style={styles.bottomview}>
-                        <Text style={styles.title}>{this.props.rowData.title}</Text>
-                        <Text style={styles.price}>￥{this.props.rowData.id}</Text>
+                        <Text style={styles.title} numberOfLines={1}>{this.props.rowData.name}</Text>
+                        <Text style={styles.price} numberOfLines={1}>￥{this.props.rowData.price}</Text>
                     </View>
-                     <TouchableOpacity style={styles.cart} activeOpacity={0.7}>
+                     <TouchableOpacity style={styles.cart} activeOpacity={0.7} onPress={()=>this.props.onCartClick(this.props.rowData.id)}>
                         <Text style={styles.carttext}>+</Text>
                      </TouchableOpacity>
                  </View>

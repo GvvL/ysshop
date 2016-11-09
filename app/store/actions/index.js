@@ -22,13 +22,21 @@ export const loadingSet=(isloading)=>({type:ActionType.LOADING_SET,loading:isloa
 
 //banner设置
 export const bannerSet=(data)=>{
-    return {type:ActionType.BRAND_SET,data}
+    return {type:ActionType.BANNER_SET,data}
 }
 
 //品牌值设置
 export const brandSet=(data)=>{
     return {type:ActionType.BRAND_SET,data}
 }
+//品牌选择
+export const brandSelected=(num)=>{
+    return {type:ActionType.SELECT_BRAND_SET,num}
+}
+
+//添加购物车
+export const cartAdd=(id)=>({type:ActionType.CART_ADD,id})
+export const cartReduce=(id)=>({type:ActionType.CART_REDUCE,id})
 
 //获取所有品牌
 export const brandGetFromServer=()=>{

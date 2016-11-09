@@ -12,5 +12,4 @@ import App from './app'
 
 
 
-
 AppRegistry.registerComponent('YsShop', () => App);
