@@ -51,24 +51,12 @@ class ShopPage extends Component{
                         initialListSize={6}
                     >
                     </ListView>
-                <Text style={styles.welcome}>
-                    ShopPage! {this.props.msg}
-                </Text>
-                <Text style={styles.instructions}>
-                    {this.props.loading?'true':'false'}===>{this.props.brand.length}
-                </Text>
-                <Text style={styles.instructions}>
-                    Double tap R on your keyboard to reload,{'\n'}
-                    Shake or press menu button for dev menu
-                </Text>
-                <Button onPress={()=>Actions.order({title:'sss'})}>
-                    click
-                </Button>
                 </ScrollView>
                 <BottomView
                     style={styles.bottom}
                     leftTitle={'共 ￥'+getPrice(this.props.carts,this.props.brand)}
                     rightTitle={this.props.carts.length}
+                    onRightPress={()=>{Actions.order({title:'购物车'})}}
                 />
             </View>
         )
@@ -109,7 +97,7 @@ class ShopPage extends Component{
                                return options.length>0
                            }}
                            onSelect={(ids,value)=>{
-                                this.props.dispatch(brandSelected(ids))
+                                this.props.dispatch(brandSelected(Number(ids)))
                            }}
             >
                 <Image style={styles.menu_img} resizeMode='contain' source={this.getLeftMenuImg(currBrandData)}></Image>

@@ -11,7 +11,7 @@ const RouterWithRedux=connect()(Router)
 const scenes=Actions.create(
     <Scene key='root'>
         <Scene key='shop' component={ShopPage} title="shop" hideNavBar={true}/>
-        <Scene key="order" component={OrderPage} title="order" backTitle="aaa"/>
+        <Scene key="order" component={OrderPage} title="order" backTitle="首页" hideNavBar={false}/>
         <Scene key="detail" component={DetailPage} title="detail"/>
         <Scene key="banner" component={BannerPage} hideNavBar={false}/>
     </Scene>

@@ -24,7 +24,6 @@ export default ()=>{
                 </TouchableOpacity>
             </View>
             <Text style={styles.middle}/>
-            <ListView style={styles.bottom}/>
         </View>
     )
 }
