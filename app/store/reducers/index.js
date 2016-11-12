@@ -44,7 +44,20 @@ const carts=(state=[],action)=>{
             return [...state,action.id]
             break
         case ActionType.CART_REDUCE:
-            return state
+            const tempArr=[]
+            let isReduce=false
+            for (let pid of state){
+                if(pid!==action.id){
+                    tempArr.push(pid)
+                }else{
+                    if(!isReduce){
+                        isReduce=true
+                    }else{
+                        tempArr.push(pid)
+                    }
+                }
+            }
+            return tempArr
             break
         default:
             return state

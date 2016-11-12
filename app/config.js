@@ -1,8 +1,8 @@
-export const HOST='http://192.168.199.111';
+export const HOST='http://139.129.213.6';
 
 export const YSHOST='http://www.yshealthy.com/';
 
-export const SHOP_INDEX_URL=HOST+'/tp5/public/index.php/shop/index';
+export const SHOP_INDEX_URL=HOST+'/ysim/public/index.php/shop/index';
 
 
 export const COLOR={

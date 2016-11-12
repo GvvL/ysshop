@@ -35,7 +35,10 @@ class ShopPage extends Component{
         const listviewdata=this.props.brand.length>0?this.props.brand[this.props.currBrandSelected].invigorants:[]
         return (
             <View style={styles.container}>
-                <Navbar style={styles.navbar}/>
+                <Navbar
+                    style={styles.navbar}
+                    cartNum={this.props.carts.length}
+                />
                 <ScrollView>
                     {this.renderSwiper()}
                     <View style={styles.menu_container}>
