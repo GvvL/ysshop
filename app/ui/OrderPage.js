@@ -5,7 +5,8 @@ import {
     StyleSheet,
     ScrollView,
     ListView,
-    TouchableOpacity
+    TouchableOpacity,
+    NativeModules
 } from 'react-native'
 import {connect} from 'react-redux'
 import {getCartBrandNotZore,getGoodsNum,getPrice} from '../utils'
@@ -51,7 +52,7 @@ class OrderPage extends Component{
                     style={styles.bottom}
                     leftTitle={`合计￥${getPrice(this.props.carts,this.props.brand)}`}
                     rightTitle={'确认下单'}
-                    onRightPress={()=>{alert('xiadan')}}
+                    onRightPress={()=>{NativeModules.MyModule.startActivityFromJs('com.ysshop.ui.PayActivity','a')}}
                 />
             </View>
         )
@@ -84,7 +85,7 @@ class OrderPage extends Component{
                     <Text style={styles.rowPrice}>￥{goodsNum*rowData.price}</Text>
                     <TouchableOpacity onPress={()=>{this.props.dispatch(cartReduce(rowID))}}><Text style={styles.addBtnStyle}>&ndash;</Text></TouchableOpacity>
                     <Text style={styles.rowNum}>{goodsNum}</Text>
-                    <TouchableOpacity onPress={()=>{this.props.dispatch(cartAdd(rowID))}}><Text style={styles.addBtnStyle}>➕</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{this.props.dispatch(cartAdd(rowID))}}><Text style={styles.addBtnStyle}>&#43;</Text></TouchableOpacity>
                 </View>
         );
     }

@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
     },
     navbar:{
         position:'absolute',
-        height:45,
+        height:50,
         top:0
     }
 });

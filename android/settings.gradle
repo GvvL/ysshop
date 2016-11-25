@@ -1,3 +1,5 @@
 rootProject.name = 'YsShop'
-
+include ':lib:pingpp'
+include ':lib:bdwallet_pay_sdk'
+include ':lib:pingpp_one'
 include ':app'

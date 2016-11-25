@@ -34,7 +34,7 @@ export default class NavBar extends Component{
 const styles=StyleSheet.create({
     container:{
         backgroundColor:COLOR.mainBg,
-        height:50,
+        height:54,
         alignItems:'center',
         flexDirection:'row'
     },
@@ -50,7 +50,7 @@ const styles=StyleSheet.create({
     },
     middleimg:{
         flex:1,
-        height:25,
+        height:36,
         borderRadius:12,
         borderWidth:1,
         borderColor:COLOR.main,
@@ -61,13 +61,13 @@ const styles=StyleSheet.create({
     },
     middleimgText:{
         color:COLOR.main,
-        fontSize:10,
+        fontSize:12,
         flex:1,
         marginLeft:10
     },
     middleimgLeft:{
-        width:14,
-        height:14,
+        width:16,
+        height:16,
         marginLeft:15
     },
     bable:{
